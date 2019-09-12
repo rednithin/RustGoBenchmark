@@ -12,7 +12,7 @@ cargo run --release
 
 ## Go (Port 8080)
 
-
+In the root directory of the project run
 ```
 go build main.go
 ./main
