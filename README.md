@@ -52,7 +52,7 @@ wrk -t12 -c1000 -d10s http://localhost:8080/factorial/5000
 
 ```
 # nithin at pc in ~ [22:37:45]
-→ wrk -t12 -c1000 -d10s http://localhost:8000/                                                                                                                                                                                    
+→ wrk -t12 -c1000 -d10s http://localhost:8000/
 Running 10s test @ http://localhost:8000/
   12 threads and 1000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -66,7 +66,7 @@ Transfer/sec:     69.13MB
 ## Go
 ```
 # nithin at pc in ~ [22:37:58]
-→ wrk -t12 -c1000 -d10s http://localhost:8080/                                                                                                                                                                                   
+→ wrk -t12 -c1000 -d10s http://localhost:8080/
 Running 10s test @ http://localhost:8080/
   12 threads and 1000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -83,7 +83,7 @@ Transfer/sec:     30.15MB
 
 ```
 # nithin at pc in ~ [22:38:13]
-→ wrk -t12 -c1000 -d10s http://localhost:8000/factorial/5000                                                                                                                                                                     
+→ wrk -t12 -c1000 -d10s http://localhost:8000/factorial/5000
 Running 10s test @ http://localhost:8000/factorial/5000
   12 threads and 1000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -98,7 +98,7 @@ Transfer/sec:     57.08MB
 
 ```
 # nithin at pc in ~ [22:38:36]
-→ wrk -t12 -c1000 -d10s http://localhost:8080/factorial/5000                                                                                                                                                                     
+→ wrk -t12 -c1000 -d10s http://localhost:8080/factorial/5000
 Running 10s test @ http://localhost:8080/factorial/5000
   12 threads and 1000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
