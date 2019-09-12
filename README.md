@@ -1,14 +1,16 @@
 # RustGoBenchmark
 Benchmarking Hello World and Factorial Requests in Rust(Actix) and Go
 
-# Running Rust Web Server (Port 8000)
+# Running the Web Servers
+
+## Rust (Port 8000)
 
 In the root directory of the project run
 ```
 cargo run --release
 ```
 
-# Running Go Web Server (Port 8080)
+## Go (Port 8080)
 
 
 ```
@@ -16,33 +18,37 @@ go build main.go
 ./main
 ```
 
-# Benchmarking Rust Web Server - Hello World Endpoint
+# Benchmarking Hello World Endpoint
+
+## Rust (Port 8000)
 
 ```
 wrk -t12 -c1000 -d10s http://localhost:8000/
 ```
 
-
-# Benchmarking Rust Web Server - Factorial Endpoint
-
-```
-wrk -t12 -c1000 -d10s http://localhost:8000/factorial/5000
-```
-
-# Benchmarking Go Web Server - Hello World Endpoint
+## Go (Port 8080)
 
 ```
 wrk -t12 -c1000 -d10s http://localhost:8080/
 ```
 
+# Benchmarking Factorial Endpoint
 
-# Benchmarking Go Web Server - Factorial Endpoint
+## Rust (Port 8000)
+
+```
+wrk -t12 -c1000 -d10s http://localhost:8000/factorial/5000
+```
+
+## Go (Port 8080)
 
 ```
 wrk -t12 -c1000 -d10s http://localhost:8080/factorial/5000
 ```
 
 # Results on Ryzen 1600 and 16GB RAM - Hello World Endpoint
+
+## Rust
 
 ```
 # nithin at pc in ~ [22:37:45]
@@ -55,7 +61,10 @@ Running 10s test @ http://localhost:8000/
   5655646 requests in 10.07s, 695.78MB read
 Requests/sec: 561892.52
 Transfer/sec:     69.13MB
+```
 
+## Go
+```
 # nithin at pc in ~ [22:37:58]
 → wrk -t12 -c1000 -d10s http://localhost:8080/                                                                                                                                                                                   10s 
 Running 10s test @ http://localhost:8080/
@@ -70,6 +79,8 @@ Transfer/sec:     30.15MB
 
 # Results on Ryzen 1600 and 16GB RAM - Factorial Endpoint
 
+## Rust
+
 ```
 # nithin at pc in ~ [22:38:13]
 → wrk -t12 -c1000 -d10s http://localhost:8000/factorial/5000                                                                                                                                                                     11s 
@@ -81,7 +92,11 @@ Running 10s test @ http://localhost:8000/factorial/5000
   36563 requests in 10.05s, 573.46MB read
 Requests/sec:   3639.63
 Transfer/sec:     57.08MB
+```
 
+## Go
+
+```
 # nithin at pc in ~ [22:38:36]
 → wrk -t12 -c1000 -d10s http://localhost:8080/factorial/5000                                                                                                                                                                     10s 
 Running 10s test @ http://localhost:8080/factorial/5000
