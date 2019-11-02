@@ -1,4 +1,4 @@
-use actix_web::{web, App, HttpServer, Responder, Result, HttpRequest, http::header };
+use actix_web::{http::header, web, App, HttpRequest, HttpServer, Responder, Result};
 use rug::Integer;
 
 fn index() -> impl Responder {
@@ -10,9 +10,8 @@ fn factorial_iterative(n: u32) -> Integer {
     for x in 2..n {
         result = result * x;
     }
-    return result
+    return result;
 }
-
 
 fn factorial_iter_handler(path: web::Path<(u32,)>) -> Result<String> {
     Ok(format!("{}", factorial_iterative(path.0)))
@@ -25,7 +24,6 @@ fn ip_address_handler(req: HttpRequest) -> impl Responder {
         "Peer info is unavailable.".to_string()
     }
 }
-
 
 fn main() {
     HttpServer::new(|| {
